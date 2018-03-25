@@ -1,5 +1,5 @@
 FROM python:3.4-alpine
-MAINTAINER Edgar Felizmenio "edgarfelizmenio@gmail.com"
+LABEL maintainer="edgarfelizmenio@gmail.com"
 
 ADD . /code
 WORKDIR /code
