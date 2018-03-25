@@ -1,0 +1,18 @@
+version: '3'
+
+volumes:
+  default-experiment-data:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /home/faculty/CS300-Data/default
+
+services:  
+  default-pos:
+    build: .
+    image: default-pos
+    volumes:
+      - default-experiment-data:/code/data
+      - ./input:/code/input
+    network_mode: host
+    entrypoint: /bin/sh
+    tty: true
