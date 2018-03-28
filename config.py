@@ -9,3 +9,7 @@ ta_url = 'http://10.147.72.14'
 cr_url = 'http://10.147.72.15'
 fr_url = 'http://10.147.72.16'
 hwr_url = 'http://10.147.72.17'
+
+il_upstream_url = '{}:{}'.format(il_url, il_channel_port)
+auth = HTTPBasicAuth('tutorial', 'pass')
+headers = {'Content-Type': 'application/json'}

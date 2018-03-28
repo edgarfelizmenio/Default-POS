@@ -11,10 +11,6 @@ from app import celery
 
 import config
 
-auth = HTTPBasicAuth('tutorial', 'pass')
-headers = {'Content-Type': 'application/json'}
-
-il_upstream_url = '{}:{}'.format(il_url, il_channel_port)
 test_data_dir = 'test_data'
 test_encounters_file_name = os.path.join(test_data_dir, 'encounters_{}kb.json')
 
