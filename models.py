@@ -8,7 +8,7 @@ from multiprocessing.pool import ThreadPool
 
 from app import celery
 
-import config
+from config import *
 
 test_data_dir = 'test_data'
 test_encounters_file_name = os.path.join(test_data_dir, 'encounters_{}kb.json')
