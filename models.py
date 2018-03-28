@@ -9,10 +9,12 @@ from multiprocessing.pool import ThreadPool
 
 from app import celery
 
+import config
+
 auth = HTTPBasicAuth('tutorial', 'pass')
 headers = {'Content-Type': 'application/json'}
 
-il_url = 'https://default-il.cs300ohie.net:5000'
+il_upstream_url = '{}:{}'.format(il_url, il_channel_port)
 test_data_dir = 'test_data'
 test_encounters_file_name = os.path.join(test_data_dir, 'encounters_{}kb.json')
 
@@ -41,7 +43,7 @@ def save_encounter_test(num_threads, num_users, file_size, policy_size, num_attr
     # encounters = encounters[:20]
     def save(encounter):
         start = time.time()
-        response = requests.post('{}/encounters/'.format(il_url), json=encounter, headers=headers, auth=auth)
+        response = requests.post('{}/encounters/'.format(il_upstream_url), json=encounter, headers=headers, auth=auth)
         end = time.time()
         print(response.status_code)
         transaction_time = end - start
@@ -87,7 +89,7 @@ def query_encounter_test(num_threads, num_users, file_size, policy_size, num_att
 
     def query(encounter_id):
         start = time.time()
-        response = requests.get('{}/encounters/{}'.format(il_url, encounter_id), headers=headers, auth=auth)
+        response = requests.get('{}/encounters/{}'.format(il_upstream_url, encounter_id), headers=headers, auth=auth)
         end = time.time()
         print(response.status_code)
         transaction_time = end - start
