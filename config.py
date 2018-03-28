@@ -1,3 +1,5 @@
+from requests.auth import HTTPBasicAuth
+
 il_url = 'https://10.147.72.11'
 
 il_channel_port = 5000

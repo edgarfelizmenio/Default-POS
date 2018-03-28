@@ -4,7 +4,6 @@ import json
 import requests
 import datetime
 
-from requests.auth import HTTPBasicAuth
 from multiprocessing.pool import ThreadPool
 
 from app import celery
