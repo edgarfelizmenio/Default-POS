@@ -1,7 +1,6 @@
 import logging
 
 from flask import Flask
-from celery import Celery
 
 def make_celery(app):
     celery = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],

@@ -15,3 +15,8 @@ hwr_url = 'http://10.147.72.17'
 il_upstream_url = '{}:{}'.format(il_url, il_channel_port)
 auth = HTTPBasicAuth('tutorial', 'pass')
 headers = {'Content-Type': 'application/json'}
+
+# proxies = {
+#   "http": 'http://proxy@upd.edu.ph:8080',
+#   "https": 'https://proxy@upd.edu.ph:8080',
+# }

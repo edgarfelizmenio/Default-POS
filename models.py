@@ -6,12 +6,10 @@ import datetime
 
 from multiprocessing.pool import ThreadPool
 
-from app import celery
-
 from config import *
 
-test_data_dir = 'test_data'
-test_encounters_file_name = os.path.join(test_data_dir, 'encounters_{}kb.json')
+test_data_dir = 'input'
+test_encounters_file_name = os.path.join(test_data_dir, '20_encounters.json')
 
 results_dir = 'results'
 
@@ -27,9 +25,10 @@ if not os.path.exists(results_dir):
 
 @celery.task()
 def save_encounter_test(num_threads, num_users, file_size, policy_size, num_attributes):
-    with open(test_encounters_file_name.format(file_size), 'r') as encounters_file:
-        encounters = json.load(encounters_file)
-        
+    # with open(test_encounters_file_name.format(file_size), 'r') as encounters_file:
+    #     encounters = json.load(encounters_file)
+    encounters = json.load(test_encounters_file_name)
+
     pool = ThreadPool(num_users)
 
     transaction_times = []
