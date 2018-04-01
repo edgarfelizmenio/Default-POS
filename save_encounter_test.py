@@ -12,13 +12,11 @@ from functools import reduce
 
 from config import *
 
-logging.basicConfig(level=logging.DEBUG)
-
 test_data_dir = 'input'
 output_data_dir = 'data'
 
 input_filename = sys.argv[1]
-encounter_ids_file_name = '{}_encounter_ids.json'.format(input_filename)
+encounter_ids_file_name = '{}_encounter_ids.json'.format(input_filename.split("_")[0])
 transaction_summary_file_name = '{}_save_transaction_summary.json'.format(input_filename)
 
 input_path = os.path.join(test_data_dir, input_filename)
