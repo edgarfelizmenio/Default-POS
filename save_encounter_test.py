@@ -26,7 +26,7 @@ encounter_ids_path = os.path.join(test_data_dir, encounter_ids_file_name)
 
 transaction_summary_path = os.path.join(output_data_dir, transaction_summary_file_name)
 
-with open(input_filename) as input_file:
+with open(input_path) as input_file:
     encounters = json.load(input_file)
 
 transaction_times = []
