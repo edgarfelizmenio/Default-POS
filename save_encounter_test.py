@@ -65,7 +65,7 @@ with open(transaction_summary_path, "w") as transaction_summary_file:
     num_transactions = len(transaction_times)
     avg_txn_time = total_time/float(num_transactions)
     rate = 1/avg_txn_time
-    success_rate = reduce(lambda a,b: a + b, map(lambda x: 1 if x == 200 else 0, status_codes))
+    success_rate = reduce(lambda a,b: a + b, map(lambda x: 1 if x == 201 else 0, status_codes))
     transaction_summary_file.write('Test start: {}\n'.format(test_start_date))
     transaction_summary_file.write('Test end: {}\n'.format(test_end_date))
     transaction_summary_file.write('Total number of transactions: {}\n'.format(num_transactions))
