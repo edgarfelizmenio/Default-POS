@@ -12,14 +12,15 @@ from functools import reduce
 
 from config import *
 
-logging.basicConfig(level=logging.DEBUG)
-
 test_data_dir = 'input'
 output_data_dir = 'data'
 
 input_filename = sys.argv[1]
-encounter_ids_file_name = '{}_encounter_ids.json'.format(input_filename.split("_")[0])
-transaction_summary_file_name = '{}_query_transaction_summary.json'.format(input_filename)
+
+num_txns_str = input_filename.split("_")[0]
+
+encounter_ids_file_name = '{}_encounter_ids.json'.format(num_txns_str)
+transaction_summary_file_name = '{}_query_transaction_summary.json'.format(num_txns_str)
 
 input_path = os.path.join(test_data_dir, encounter_ids_file_name)
 transaction_summary_path = os.path.join(output_data_dir, transaction_summary_file_name)
