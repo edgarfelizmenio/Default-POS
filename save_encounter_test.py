@@ -20,7 +20,7 @@ input_filename = sys.argv[1]
 num_txns_str = input_filename.split("_")[0]
 
 encounter_ids_file_name = '{}_encounter_ids.json'.format(num_txns_str)
-transaction_summary_file_name = '{}_save_transaction_summary.json'.format(num_txns_str)
+transaction_summary_file_name = '{}_save_transaction_summary.txt'.format(num_txns_str)
 
 input_path = os.path.join(test_data_dir, input_filename)
 encounter_ids_path = os.path.join(test_data_dir, encounter_ids_file_name)
