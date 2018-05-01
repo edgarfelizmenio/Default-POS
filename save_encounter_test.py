@@ -46,7 +46,7 @@ def save(encounter):
     status_codes.append(response.status_code)
     transaction_time = end - start
     transaction_times.append(transaction_time)
-    encounter_ids.append(response.json())
+    encounter_ids.append(response.json()['encounter_id'])
 
 
 with warnings.catch_warnings():

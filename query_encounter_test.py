@@ -20,14 +20,14 @@ input_filename = sys.argv[1]
 num_txns_str = input_filename.split("_")[0]
 
 encounter_ids_file_name = '{}_encounter_ids.json'.format(num_txns_str)
-transaction_summary_file_name = '{}_query_transaction_summary.json'.format(num_txns_str)
+transaction_summary_file_name = '{}_query_transaction_summary.txt'.format(num_txns_str)
 
 input_path = os.path.join(test_data_dir, encounter_ids_file_name)
 transaction_summary_path = os.path.join(output_data_dir, transaction_summary_file_name)
 
 with open(input_path) as input_file:
     encounter_ids = json.load(input_file)
-
+    
 transaction_times = []
 status_codes = []
 
